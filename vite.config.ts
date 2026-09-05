@@ -6,7 +6,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig(() => {
   return {
-    base: '/LITTLE-ROSES-/',
+    base: '/LITTLE-ROSES/',
     plugins: [
       react(),
       tailwindcss(),
@@ -21,7 +21,7 @@ export default defineConfig(() => {
           'pwa-maskable-512x512.png',
         ],
         manifest: {
-          id: '/',
+          id: '/LITTLE-ROSES/',
           name: 'Little Roses EduHub - Little Roses Academy',
           short_name: 'LittleRoses',
           description:
@@ -30,23 +30,23 @@ export default defineConfig(() => {
           background_color: '#1b3252',
           display: 'standalone',
           orientation: 'portrait-primary',
-          start_url: '/',
-          scope: '/',
+          start_url: '/LITTLE-ROSES/',
+          scope: '/LITTLE-ROSES/',
           icons: [
             {
-              src: '/pwa-192x192.png',
+              src: 'pwa-192x192.png',
               sizes: '192x192',
               type: 'image/png',
               purpose: 'any',
             },
             {
-              src: '/pwa-512x512.png',
+              src: 'pwa-512x512.png',
               sizes: '512x512',
               type: 'image/png',
               purpose: 'any',
             },
             {
-              src: '/pwa-maskable-512x512.png',
+              src: 'pwa-maskable-512x512.png',
               sizes: '512x512',
               type: 'image/png',
               purpose: 'maskable',
@@ -98,10 +98,7 @@ export default defineConfig(() => {
       },
     },
     server: {
-      // HMR is disabled in AI Studio via DISABLE_HMR env var.
-      // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
-      // Disable file watching when DISABLE_HMR is true to save CPU during agent edits.
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
   };
