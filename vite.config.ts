@@ -6,7 +6,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig(() => {
   return {
-    base: process.env.VITE_BASE_URL || '/',
+    base: '/LITTLE-ROSES-/',
     plugins: [
       react(),
       tailwindcss(),
